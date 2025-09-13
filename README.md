@@ -29,5 +29,6 @@ Functions and Classes
 OOP Concepts: Inheritance, Encapsulation, Polymorphism
 File I/O (optional tasks)
 Basic Console UI
+
 📁 Folder Structure
 codsoft/ ├── Task 1 - Number Guessing Game/ ├── Task 2 - Grade Calculator/ ├── Task 3 - ATM Interface/ ── README.md
