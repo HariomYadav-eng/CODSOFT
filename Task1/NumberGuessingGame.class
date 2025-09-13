@@ -1,0 +1,66 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGuessingGame {
+   public NumberGuessingGame() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      Random var2 = new Random();
+      int var3 = 0;
+      int var4 = 0;
+      System.out.println("Welcome to the Number Guessing Game! ");
+
+      String var10;
+      for(boolean var5 = true; var5; var5 = var10.equals("yes") || var10.equals("y")) {
+         int var6 = var2.nextInt(100) + 1;
+         int var7 = 7;
+         boolean var8 = false;
+         ++var3;
+         System.out.println("\nRound " + var3 + " has started!");
+         System.out.println("Guess the number between 1 to 100");
+         System.out.println("You have " + var7 + " attempts\n");
+
+         while(var7 > 0) {
+            System.out.print("\ud83d\udc49 Enter your guess: ");
+            if (!var1.hasNextInt()) {
+               System.out.println("Invalid input! Please enter a number.");
+               var1.next();
+            } else {
+               int var9 = var1.nextInt();
+               --var7;
+               if (var9 < var6) {
+                  System.out.println("Too low, think bigger!");
+               } else {
+                  if (var9 <= var6) {
+                     System.out.println("Correct! You guessed the number!");
+                     System.out.println("Attempts used: " + (7 - var7));
+                     var8 = true;
+                     ++var4;
+                     break;
+                  }
+
+                  System.out.println("Too high, think smaller!");
+               }
+
+               System.out.println("Attempts left: " + var7 + "\n");
+            }
+         }
+
+         if (!var8) {
+            System.out.println("You've used all attempts. The number was: " + var6);
+         }
+
+         System.out.print("\nDo you want to play another round? (yes/no): ");
+         var1.nextLine();
+         var10 = var1.nextLine().trim().toLowerCase();
+      }
+
+      System.out.println("\nGame Over!");
+      System.out.println("Total Rounds Played: " + var3);
+      System.out.println("Rounds Won: " + var4);
+      var1.close();
+   }
+}

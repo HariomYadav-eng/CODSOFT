@@ -1,0 +1,77 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+import java.util.Scanner;
+
+public class Student_Grade_Calculator {
+   public Student_Grade_Calculator() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      System.out.println("Enter the number of Students = ");
+      int var2 = var1.nextInt();
+      int[] var3 = new int[var2];
+      double[] var4 = new double[var2];
+
+      int var5;
+      for(var5 = 0; var5 < var2; ++var5) {
+         System.out.println("\nEnter the student " + (var5 + 1) + " student marks =\n");
+         int var6 = 0;
+         int var7 = 0;
+
+         for(int var8 = 0; var8 < 5; ++var8) {
+            if (var8 == 0) {
+               System.out.println("Enter the DSA subject marks =");
+               var6 = var1.nextInt();
+            }
+
+            if (var8 == 1) {
+               System.out.println("Enter the DBMS subject marks =");
+               var6 = var1.nextInt();
+            }
+
+            if (var8 == 2) {
+               System.out.println("Enter the Python subject marks =");
+               var6 = var1.nextInt();
+            }
+
+            if (var8 == 3) {
+               System.out.println("Enter the Java subject marks =");
+               var6 = var1.nextInt();
+            }
+
+            if (var8 == 4) {
+               System.out.println("Enter the Operating System subject marks =");
+               var6 = var1.nextInt();
+            }
+
+            var7 += var6;
+         }
+
+         var3[var5] = var7;
+         var4[var5] = (double)var3[var5] / 5.0;
+      }
+
+      System.out.println("\nPrint the student result  =");
+
+      for(var5 = 0; var5 < var2; ++var5) {
+         System.out.println("\nStudent " + (var5 + 1) + " Info =");
+         System.out.println("Total marks =" + var3[var5]);
+         System.out.println("Persentage of student =" + var4[var5]);
+         double var9 = var4[var5];
+         if (var9 >= 97.0 && var9 <= 100.0) {
+            System.out.println("Grade: A+");
+         } else if (var9 >= 90.0) {
+            System.out.println("Grade: A");
+         } else if (var9 >= 80.0) {
+            System.out.println("Grade: B");
+         } else if (var9 >= 70.0) {
+            System.out.println("Grade: C");
+         } else if (var9 >= 60.0) {
+            System.out.println("Grade: D");
+         } else {
+            System.out.println("Grade: F");
+         }
+      }
+
+   }
+}
